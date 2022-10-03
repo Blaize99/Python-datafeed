@@ -1,2 +1,2 @@
 # Python-datafeed
-This is a python program to run an accounting platform on a local system. needs a GUI
+This is a python program to run a shopping platform on a local system. GUI for the same will be updated soon.
