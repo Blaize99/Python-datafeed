@@ -74,7 +74,8 @@ def admin():
                 m=float(input("\t\tEnter the price "))
                 k=input("\t\tEnter manufacturer details ")
                 r=int(input("\t\tEnter the number of items present "))
-                con=msc.connect(host="localhost",user="root",passwd="blaizetom@2003",database="blaize")
+                # enter your password and database
+                con=msc.connect(host="localhost",user="root",passwd="",database="blaize")
                 cur=con.cursor()
                 query="insert into amazon(item_no,item,item_name,colour,size,cost,manufacturer,item_left) values({},'{}','{}','{}',{},{},'{}',{})".format(i,b,c,d,a,m,k,r)
                 cur.execute(query)               
@@ -83,7 +84,8 @@ def admin():
                 a=input("\t\tDo you want to enter another product ")
             con.close()
         if t==3:
-            con=msc.connect(host="localhost",user="root",passwd="blaizetom@2003",database="blaize")
+            # enter your password and database
+            con=msc.connect(host="localhost",user="root",passwd="",database="blaize")
             cur=con.cursor()
             a='y'
             while a=='y' or a=='Y':
@@ -116,7 +118,8 @@ def admin():
                 a=input("\t\tDo you wish to continue ")
             con.close()
         if t==2:
-            con=msc.connect(host="localhost",user="root",passwd="blaizetom@2003",database="blaize")
+            # enter your password and database
+            con=msc.connect(host="localhost",user="root",passwd="",database="blaize")
             csr=con.cursor()
             a='y'
             while a=='y' or a=='Y':
@@ -140,7 +143,8 @@ def admin():
 # to search for a product
 def search(d):
     import mysql.connector as msc
-    con=msc.connect(host="localhost",user="root",passwd="blaizetom@2003",database="blaize")
+    # enter your password and database
+    con=msc.connect(host="localhost",user="root",passwd="",database="blaize")
     csr=con.cursor()
     z='y'
     while z=='y' or z=='Y':
@@ -228,7 +232,8 @@ def search(d):
 # to buy a product
 def buy(d):
     import mysql.connector as msc
-    con=msc.connect(host='localhost',user='root',passwd='blaizetom@2003',database='blaize')
+    # enter your password and database
+    con=msc.connect(host='localhost',user='root',passwd='',database='blaize')
     cur=con.cursor()
     email=d[3]
     cur.execute("select * from cart where email='{}'".format(email,))
@@ -265,7 +270,8 @@ def buy(d):
         print("item",c,'has been dispatched to',f,'to the location',x)
         for i in data:
             b=i[0]
-            con=msc.connect(host="localhost",user="root",passwd="blaizetom@2003",database="blaize")
+            # enter your password and database
+            con=msc.connect(host="localhost",user="root",passwd="",database="blaize")
             cur=con.cursor()
             cur.execute("select * from amazon where item_no={}".format(b,))
             d=cur.fetchall()
